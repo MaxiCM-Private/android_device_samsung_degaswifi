@@ -15,8 +15,12 @@
 
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/degaswifi/include
 
-# Target info
+# Misc
+MRVL_ION := true
 USE_CAMERA_STUB := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+MRVL_LAUNCH_DMS_IN_SURFACEFLINGER := true
+MRVL_INTERFACE_ANIMATION := true
 
 # MRVL hardware
 BOARD_USES_MRVL_HARDWARE := true
@@ -34,10 +38,13 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := degas
+TARGET_OTA_ASSERT_DEVICE := degaswifi
 
 # Audio
+BOARD_HAVE_PRE_KITKAT_AUDIO_BLOB := true
+COMMON_GLOBAL_CFLAGS += -DMR0_AUDIO_BLOB -DMR1_AUDIO_BLOB
 BOARD_USES_ALSA_AUDIO := true
+BUILD_WITH_ALSA_UTILS := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/degaswifi/bluetooth
@@ -57,12 +64,14 @@ COMMON_GLOBAL_CFLAGS += -DNO_SECURE_DISCARD
 BOARD_USES_MRVL_HARDWARE := true
 BOARD_HAVE_PIXEL_FORMAT_INFO := true
 NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+VSYNC_EVENT_PHASE_OFFSET_NS := 0
+BOARD_USE_BGRA_8888 := true
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/samsung/degaswifi/configs/egl.cfg
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/degaswifi
-TARGET_KERNEL_CONFIG := pxa1088_degaswifi_usa_defconfig
+TARGET_KERNEL_CONFIG := pxa1088_degaswifi_eur_defconfig
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/degaswifi/degaswifi_mkbootimg.mk
 BOARD_MKBOOTIMG_ARGS := --dt device/samsung/degaswifi/rootdir/boot.img-dt --ramdisk_offset 0x01000000
@@ -85,6 +94,7 @@ BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file"
 
 # WiFi
+BOARD_HAVE_MARVELL_WIFI := true
 BOARD_WLAN_VENDOR := MRVL
 WIFI_DRIVER_MODULE_PATH := "/system/lib/modules/sd8xxx.ko"
 WIFI_DRIVER_MODULE_NAME	:= "sd8xxx"
