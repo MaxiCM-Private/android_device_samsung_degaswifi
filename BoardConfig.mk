@@ -1,4 +1,4 @@
-# Copyright (C) 2013 The CyanogenMod Project
+# Copyright (C) 2015 The CyanogenMod Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,15 +13,10 @@
 # limitations under the License.
 #
 
+# Include headers
 TARGET_SPECIFIC_HEADER_PATH := device/samsung/degaswifi/include
 
-# Target info
-USE_CAMERA_STUB := true
-
-# MRVL hardware
-BOARD_USES_MRVL_HARDWARE := true
-
-# Architecture
+# Board
 TARGET_ARCH := arm
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_BOARD_PLATFORM := mrvl
@@ -34,7 +29,7 @@ TARGET_NO_BOOTLOADER := true
 TARGET_NO_RADIOIMAGE := true
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := degas
+TARGET_OTA_ASSERT_DEVICE := degaswifi
 
 # Audio
 BOARD_USES_ALSA_AUDIO := true
@@ -43,7 +38,6 @@ BOARD_USES_ALSA_AUDIO := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/degaswifi/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_MRVL := true
-MRVL_WIRELESS_DAEMON_API := true
 
 # Charging mode
 BOARD_CHARGING_MODE_BOOTING_LPM := true
@@ -62,7 +56,7 @@ BOARD_EGL_CFG := device/samsung/degaswifi/configs/egl.cfg
 
 # Kernel
 TARGET_KERNEL_SOURCE := kernel/samsung/degaswifi
-TARGET_KERNEL_CONFIG := pxa1088_degaswifi_usa_defconfig
+TARGET_KERNEL_CONFIG := pxa1088_degaswifi_eur_defconfig
 BOARD_KERNEL_BASE := 0x10000000
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/degaswifi/degaswifi_mkbootimg.mk
 BOARD_MKBOOTIMG_ARGS := --dt device/samsung/degaswifi/rootdir/boot.img-dt --ramdisk_offset 0x01000000
@@ -83,6 +77,9 @@ TARGET_RECOVERY_FSTAB := device/samsung/degaswifi/rootdir/fstab.pxa1088
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/f_mass_storage/lun%d/file"
+
+# Misc
+USE_CAMERA_STUB := true
 
 # WiFi
 BOARD_WLAN_VENDOR := MRVL

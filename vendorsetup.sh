@@ -1,1 +1,2 @@
 add_lunch_combo cm_degaswifi-userdebug
+add_lunch_combo cm_degaswifi-eng

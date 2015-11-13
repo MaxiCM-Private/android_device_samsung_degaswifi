@@ -1,4 +1,4 @@
-# Copyright (C) 2013 The Android Open Source Project
+# Copyright (C) 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,7 +23,7 @@ PRODUCT_MANUFACTURER := samsung
 PRODUCT_MODEL := SM-T230NU
 
 # Inherit makefile
-$(call inherit-product, device/samsung/degaswifi/device.mk)
+$(call inherit-product, device/samsung/degaswifi/degaswifi.mk)
 
 # Vendor blobs
 $(call inherit-product-if-exists, vendor/samsung/degaswifi/degaswifi-vendor.mk)
