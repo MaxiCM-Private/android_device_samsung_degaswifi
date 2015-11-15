@@ -83,9 +83,9 @@ PRODUCT_PACKAGES += \
 
 # Graphics
 PRODUCT_PACKAGES += \
-	libHWComposerGC \
-	hwcomposer.pxa1088 \
-	gralloc.pxa1088
+    libHWComposerGC \
+    hwcomposer.mrvl \
+    gralloc.mrvl
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
