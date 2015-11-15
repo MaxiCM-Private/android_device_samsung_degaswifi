@@ -20,6 +20,9 @@ LOCAL_PATH := device/samsung/degaswifi
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Audio
+PRODUCT_PACKAGES += \
+    libasound
+
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
     $(LOCAL_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf
@@ -78,8 +81,16 @@ PRODUCT_PACKAGES += \
     charger \
     charger_res_images
 
+# Graphics
+PRODUCT_PACKAGES += \
+	libHWComposerGC \
+	hwcomposer.pxa1088 \
+	gralloc.pxa1088
+
 # Wi-Fi
 PRODUCT_PACKAGES += \
+    libMarvellWireless \
+    MarvellWirelessDaemon \
     libnetcmdiface
 
 PRODUCT_COPY_FILES += \
