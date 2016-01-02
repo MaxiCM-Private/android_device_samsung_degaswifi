@@ -16,7 +16,7 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base.mk)
 
 # Set those variables here to overwrite the inherited values.
-PRODUCT_NAME := full_degaswifi
+PRODUCT_NAME := carbon_degaswifi
 PRODUCT_DEVICE := degaswifi
 PRODUCT_BRAND := samsung
 PRODUCT_MANUFACTURER := samsung

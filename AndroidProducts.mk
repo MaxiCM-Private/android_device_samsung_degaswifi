@@ -15,4 +15,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_degaswifi.mk
+    $(LOCAL_DIR)/carbon_degaswifi.mk
